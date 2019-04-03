@@ -10,9 +10,11 @@ COPY . .
 RUN make
 
 FROM alpine
+RUN apk add --no-cache \
+    ca-certificates
 WORKDIR /root/
 COPY --from=build /root/webircgateway .
 COPY --from=kiwiirc-client /root/kiwiirc-client/dist/ ./www/
 COPY --from=plugin-olm /root/plugin-olm/dist/ ./www/
-EXPOSE 80
-CMD /root/webircgateway
+EXPOSE 80 443 113
+ENTRYPOINT [ "/root/webircgateway" ]
