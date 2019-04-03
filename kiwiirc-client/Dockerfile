@@ -1,9 +1,9 @@
 FROM node AS build
 WORKDIR /root/kiwiirc-client/
-COPY ./repo/package.json .
-COPY ./repo/yarn.lock .
+COPY package.json .
+COPY yarn.lock .
 RUN yarn --frozen-lockfile --no-scripts
-COPY ./repo/ .
+COPY . .
 RUN yarn --frozen-lockfile
 RUN yarn build
 

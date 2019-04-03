@@ -1,8 +1,7 @@
 FROM archlinux/base AS build
 RUN pacman --noconfirm -Syu --needed base-devel emscripten perl-json cmake jre-openjdk-headless nodejs npm && \
     pacman --noconfirm -Scc
-WORKDIR /root/
-COPY ./repo/ ./olm/
+COPY . /root/olm/
 WORKDIR /root/olm/javascript/
 RUN npm install --no-package-lock
 # initialize emcc configs. otherwise it will print a help message instead of building one of the files later!

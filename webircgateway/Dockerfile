@@ -3,16 +3,16 @@ RUN apk add --no-cache \
     build-base \
     git
 WORKDIR /root/
-COPY ./repo/go.mod .
-COPY ./repo/go.sum .
+COPY go.mod .
+COPY go.sum .
 RUN go mod download
-COPY ./repo/ .
+COPY . .
 RUN make
 
 FROM alpine
 WORKDIR /root/
 COPY --from=build /root/webircgateway .
-COPY --from=kiwiirc-docker-compose_kiwiirc-client /root/kiwiirc-client/dist/ ./www/
-COPY --from=kiwiirc-docker-compose_plugin-olm /root/plugin-olm/dist/ ./www/
+COPY --from=kiwiirc-client /root/kiwiirc-client/dist/ ./www/
+COPY --from=plugin-olm /root/plugin-olm/dist/ ./www/
 EXPOSE 80
 CMD /root/webircgateway
