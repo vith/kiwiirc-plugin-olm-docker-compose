@@ -1,12 +1,16 @@
 [submodule "olm/repo"]
 	path = olm/repo
 	url = git@github.com:kiwiirc/olm.git
+	branch = 3.0.0-support-typedarrays
 [submodule "plugin-olm/repo"]
 	path = plugin-olm/repo
 	url = git@github.com:kiwiirc/plugin-olm.git
+	branch = per-channel-ui
 [submodule "webircgateway/repo"]
 	path = webircgateway/repo
 	url = https://github.com/kiwiirc/webircgateway.git
+	branch = master
 [submodule "kiwiirc-client/repo"]
 	path = kiwiirc-client/repo
 	url = https://github.com/vith/kiwiirc.git
+	branch = pre.input.command

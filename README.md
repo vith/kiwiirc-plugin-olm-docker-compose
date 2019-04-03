@@ -5,6 +5,19 @@ This repository will build and deploy kiwiirc, webircgateway, plugin-olm, and or
 ## Usage
 
 ```console
-$ git submodule update --init
+$ git submodule update --remote --init
 $ docker-compose up
+```
+
+## Updating
+
+This will check out the latest commit in each submodule's tracked branch:
+
+```console
+$ git pull
+$ git submodule update --remote
+$ docker-compose build
+$ docker-compose up
+$ # or:
+$ docker-compose up --build
 ```
