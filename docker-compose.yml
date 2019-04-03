@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+
+  olm:
+    build: ./olm
+    command: "true"
+  
+  plugin-olm:
+    build: ./plugin-olm
+    command: "true"
+
+  kiwiirc-client:
+    build: ./kiwiirc-client
+    command: "true"
+  
+  webircgateway:
+    build: ./webircgateway
+    volumes:
+      - ./webircgateway.conf:/root/config.conf
+      - ./kiwiirc-client.config.json:/root/www/static/config.json
+    ports:
+      - "30000:80"
+
+  oragono:
+    image: oragono/oragono:latest
+    expose:
+      - 6667

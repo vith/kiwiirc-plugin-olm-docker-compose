@@ -1,0 +1,12 @@
+[submodule "olm/repo"]
+	path = olm/repo
+	url = git@github.com:kiwiirc/olm.git
+[submodule "plugin-olm/repo"]
+	path = plugin-olm/repo
+	url = git@github.com:kiwiirc/plugin-olm.git
+[submodule "webircgateway/repo"]
+	path = webircgateway/repo
+	url = https://github.com/kiwiirc/webircgateway.git
+[submodule "kiwiirc-client/repo"]
+	path = kiwiirc-client/repo
+	url = https://github.com/vith/kiwiirc.git
