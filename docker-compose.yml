@@ -34,7 +34,11 @@ services:
     ports:
       - "30000:80"
 
-  oragono:
-    image: oragono/oragono:latest
+  ircd:
+    # image: inspircd/inspircd-docker
+    build:
+      context: ./inspircd/
+    volumes:
+      - ./inspircd/conf/:/inspircd/conf/
     expose:
       - 6667
