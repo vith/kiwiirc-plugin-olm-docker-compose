@@ -5,7 +5,7 @@
 [submodule "plugin-olm/repo"]
 	path = plugin-olm/plugin-olm-git
 	url = git@github.com:kiwiirc/plugin-olm.git
-	branch = per-channel-ui
+	branch = master
 [submodule "webircgateway/repo"]
 	path = webircgateway/webircgateway-git
 	url = https://github.com/kiwiirc/webircgateway.git
