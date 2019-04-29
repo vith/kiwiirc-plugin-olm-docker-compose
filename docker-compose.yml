@@ -14,9 +14,9 @@ services:
       dockerfile: ../Dockerfile
     command: "true"
 
-  kiwiirc-client:
+  kiwiirc:
     build:
-      context: ./kiwiirc-client/kiwiirc-git/
+      context: ./kiwiirc/kiwiirc-git/
       dockerfile: ../Dockerfile
     command: "true"
   
