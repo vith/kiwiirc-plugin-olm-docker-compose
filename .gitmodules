@@ -1,20 +1,20 @@
-[submodule "olm/repo"]
+[submodule "olm"]
 	path = olm/olm-git
 	url = git@github.com:kiwiirc/olm.git
 	branch = kiwi-fork
-[submodule "plugin-olm/repo"]
+[submodule "plugin-olm"]
 	path = plugin-olm/plugin-olm-git
 	url = git@github.com:kiwiirc/plugin-olm.git
 	branch = master
-[submodule "webircgateway/repo"]
+[submodule "webircgateway"]
 	path = webircgateway/webircgateway-git
 	url = https://github.com/vith/webircgateway.git
 	branch = gzipped-fileserver
-[submodule "kiwiirc-client/repo"]
-	path = kiwiirc-client/kiwiirc-git
-	url = https://github.com/vith/kiwiirc.git
-	branch = pre.input.command
-[submodule "inspircd/inspircd-saberuk"]
+[submodule "kiwiirc"]
+	path = kiwiirc/kiwiirc-git
+	url = https://github.com/kiwiirc/kiwiirc.git
+	branch = master
+[submodule "inspircd"]
 	path = inspircd/inspircd-git
 	url = https://github.com/SaberUK/inspircd.git
 	branch = insp3+ircv3-ctctags
