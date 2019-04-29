@@ -26,9 +26,14 @@ services:
       dockerfile: ../Dockerfile
     volumes:
       - ./webircgateway.conf:/root/config.conf
+      # untrusted testing cert:
+      # openssl req -x509 -newkey rsa:4096 -keyout server.key -out server.crt -days 365 -nodes -subj '/CN=0.0.0.0'
+      - ./server.key:/root/server.key
+      - ./server.crt:/root/server.crt
       - ./kiwiirc-client.config.json:/root/www/static/config.json
     ports:
       - "30000:80"
+      - "30001:443"
 
   ircd:
     # image: inspircd/inspircd-docker
