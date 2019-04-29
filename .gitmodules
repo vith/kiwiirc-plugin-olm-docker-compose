@@ -1,17 +1,17 @@
 [submodule "olm/repo"]
-	path = olm/repo
+	path = olm/olm-git
 	url = git@github.com:kiwiirc/olm.git
-	branch = 3.0.0-support-typedarrays
+	branch = kiwi-fork
 [submodule "plugin-olm/repo"]
-	path = plugin-olm/repo
+	path = plugin-olm/plugin-olm-git
 	url = git@github.com:kiwiirc/plugin-olm.git
 	branch = per-channel-ui
 [submodule "webircgateway/repo"]
-	path = webircgateway/repo
+	path = webircgateway/webircgateway-git
 	url = https://github.com/kiwiirc/webircgateway.git
 	branch = master
 [submodule "kiwiirc-client/repo"]
-	path = kiwiirc-client/repo
+	path = kiwiirc-client/kiwiirc-git
 	url = https://github.com/vith/kiwiirc.git
 	branch = pre.input.command
 [submodule "inspircd/inspircd-saberuk"]

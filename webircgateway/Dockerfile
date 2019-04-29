@@ -14,7 +14,7 @@ RUN apk add --no-cache \
     ca-certificates
 WORKDIR /root/
 COPY --from=build /root/webircgateway .
-COPY --from=kiwiirc-client /root/kiwiirc-client/dist/ ./www/
-COPY --from=plugin-olm /root/plugin-olm/dist/ ./www/
+COPY --from=kiwiirc-plugin-olm-docker-compose_kiwiirc-client /root/kiwiirc-client/dist/ ./www/
+COPY --from=kiwiirc-plugin-olm-docker-compose_plugin-olm /root/plugin-olm/dist/ ./www/
 EXPOSE 80 443 113
 ENTRYPOINT [ "/root/webircgateway" ]

@@ -1,12 +1,8 @@
-FROM archlinux/base AS build
-RUN pacman --noconfirm -Syu --needed base-devel emscripten perl-json cmake jre-openjdk-headless nodejs npm && \
-    pacman --noconfirm -Scc
+FROM vith/archlinux-olm-build-deps AS build
+
 COPY . /root/olm/
 WORKDIR /root/olm/javascript/
 RUN npm install --no-package-lock
-# initialize emcc configs. otherwise it will print a help message instead of building one of the files later!
-RUN source /etc/profile.d/emscripten.sh && \
-    emcc
 RUN source /etc/profile.d/emscripten.sh && \
     npm run build
 

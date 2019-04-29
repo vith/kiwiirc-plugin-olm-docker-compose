@@ -4,30 +4,26 @@ services:
 
   olm:
     build:
-      context: ./olm/repo/
+      context: ./olm/olm-git/
       dockerfile: ../Dockerfile
-    image: olm
     command: "true"
   
   plugin-olm:
     build:
-      context: ./plugin-olm/repo/
+      context: ./plugin-olm/plugin-olm-git/
       dockerfile: ../Dockerfile
-    image: plugin-olm
     command: "true"
 
   kiwiirc-client:
     build:
-      context: ./kiwiirc-client/repo/
+      context: ./kiwiirc-client/kiwiirc-git/
       dockerfile: ../Dockerfile
-    image: kiwiirc-client
     command: "true"
   
   webircgateway:
     build:
-      context: ./webircgateway/repo/
+      context: ./webircgateway/webircgateway-git/
       dockerfile: ../Dockerfile
-    image: webircgateway
     volumes:
       - ./webircgateway.conf:/root/config.conf
       - ./kiwiirc-client.config.json:/root/www/static/config.json
