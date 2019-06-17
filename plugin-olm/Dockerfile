@@ -1,8 +1,5 @@
 FROM node AS build
 
-RUN apt-get update && apt-get install -y \
-    brotli
-
 COPY --from=kiwiirc-plugin-olm-docker-compose_olm /root/olm/ /root/olm/
 WORKDIR /root/olm/javascript/
 RUN yarn link
@@ -15,8 +12,6 @@ RUN yarn --frozen-lockfile --no-scripts
 COPY . .
 RUN yarn --frozen-lockfile
 RUN yarn run build-plugin
-WORKDIR /root/plugin-olm/dist/
-RUN for f in *; do brotli --input $f --output $f.br; done
 
 
 

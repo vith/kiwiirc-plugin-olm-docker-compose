@@ -36,10 +36,15 @@ services:
       - "30001:443"
 
   ircd:
-    # image: inspircd/inspircd-docker
-    build:
-      context: ./inspircd/
-    volumes:
-      - ./inspircd/conf/:/inspircd/conf/
+    image: oragono/oragono
     expose:
-      - 6667
+        - 6667
+
+  # ircd:
+  #   # image: inspircd/inspircd-docker
+  #   build:
+  #     context: ./inspircd/
+  #   volumes:
+  #     - ./inspircd/conf/:/inspircd/conf/
+  #   expose:
+  #     - 6667
